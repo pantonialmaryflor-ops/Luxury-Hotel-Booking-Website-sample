@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mary's Hotel sample design</title>
+<script src="guest-count.javascript" defer></script>
+  <link rel="stylesheet" href="11.slider.css">
+  <link rel="stylesheet" href="06.header.css">
+  <link rel="stylesheet" href="07.filter-section.css">
+  <link rel="stylesheet" href="08.filter.results.css">
+  <link rel="stylesheet" href="10.main-footer.css">
+   <link rel="stylesheet" href="12.suggestion-slider.css">
+  <link rel="stylesheet" href="08.footer-col.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet" href="https://cloudflare.com">
+
+</head>
+
+<body>
+<div class="main-wrapper">
+
+<header>
+<nav class="navbar">
+<div class="logo">
+<h1><span>M</span>ary's</h1>
+<h1><span>H</span>otel</h1>
+</div>
+
+<ul class="nav-links">
+<li><a href="homepage.html" target="_blank">Home page</a></li>
+<li><a href="#Destinations">Destinations</a></li>
+<li><a href="#Curated">Curated</a></li>
+<li><a href="#Concierge">Concierge</a></li>
+</ul>
+
+<div class="nav-right">
+<div class="menu-trigger">
+<span class="lang" id="current-menu">ENG▿</span>
+
+<div class="dropdown-content">
+<a href="#" class="menu-option" data-value="en">ENG</a>
+<a href="#" class="menu-option" data-value="esp">ESP</a>
+<a href="#" class="menu-option" data-value="fra">FRA</a>
+<a href="#" class="menu-option" data-value="ger">GER</a>
+<a href="#" class="menu-option" data-value="ita">ITA</a>
+<a href="#" class="menu-option" data-value="jpn">JPN</a>
+<a href="#" class="menu-option" data-value="chn">CHN</a>
+</div>
+</div>
+</div>
+</nav>
+</header>
+
+<main class="content-layout">
+<aside class="filter-sidebar">
+<div class="filter-header">
+<span>Filters</span>
+<button class="clear-btn" onclick="clearFilters()">Clear All</button>
+</div>
+
+<div class="sidebar-form">
+<div class="filter-group">
+<h3>Location</h3>
+
+<div class="search-container">
+<div class="input-wrapper">
+<svg class="search-icon" viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+</svg>
+<input type="text" id="location-input" name="location" placeholder="Search for a city or place...">
+</div>
+
+<ul id="result-list"></ul>
+</div>
+</div>
+
+<div class="booking-form-container">
+<label for="check-in-date" class="sr-only">Check-in Date</label>
+<input type="date" id="check-in-date" name="check-in-date" required>
+</div>
+
+<div class="booking-form-container">
+<label for="check-out-date" class="sr-only">Check-out Date</label>
+<input type="date" id="check-out-date" name="check-out-date" required>
+</div>
+
+<div class="booking-form-container">
+<label for="special-requests" class="sr-only">Special Requests</label>
+<input type="text" id="special-requests" name="special-requests" placeholder="Special Requests (optional)">
+</div>
+
+<div class="booking-form-container">
+<label for="promo-code" class="sr-only">Promo Code</label>
+<input type="text" id="promo-code" name="promo-code" placeholder="Promo Code (optional)" autocomplete="on">
+</div>
+
+<div class="filter-group">
+<h3>Price Range</h3>
+<div class="price-range-wrapper">
+  <span class="min-value">¥95,000</span>
+  <input type="range" id="price-range" min="95000" max="200000" value="200000" step="1000">
+  <p>Max Price: <span id="current-value" class="current-value">¥200,000</span></p>
+</div>
+<div class="filter-group">
+<h3>Room Type</h3>
+
+<label><input type="checkbox" data-filter="room-type" value="master-suite"> Master Suite</label>
+<label><input type="checkbox" data-filter="room-type" value="executive-suite"> Executive Suite</label>
+<label><input type="checkbox" data-filter="room-type" value="presidential-suite"> Presidential Suite</label>
+</div>
+
+<div class="filter-group">
+<div class="guest-box">
+<button type="button" id="guest-minus" class="guest-btn-minus">-</button>
+<span class="guest-count">1 Adult</span>
+<button type="button" id="guest-plus" class="guest-btn-plus">+</button>
+</div> 
+</div>
+<div class="filter-group">
+<h3>Amenities</h3>
+<label>
+<input type="checkbox" data-filter="amenity" value="wifi"> <i class="bi bi-wifi"></i> Wi-Fi
+</label>
+<label>
+<input type="checkbox" data-filter="amenity" value="spa"> Spa
+</label>
+<label>
+<input type="checkbox" data-filter="amenity" value="pool"> Pool
+</label>
+<label>
+<input type="checkbox" data-filter="amenity" value="airport-shuttle"> Airport Shuttle
+</label>
+</div>
+
+<button type="button" class="check-availability-button">Update search</button>
+</div>
+
+<div class="img-container">
+<img src="43.members.png" alt="members-only">
+<div class="text-box">
+<h5>Members gets more</h5>
+<p>
+Join Mary's hotel exclusive membership to get more exclusive benifits and members only discounts
+</p>
+<button type="button" class="check-availability-button">Join Now</button>
+</div>
+</div>
+</aside>
+<section class="filter-results">
+<div class="roomtype-results">
+<article class="results-card" data-room-type="master-suite" data-amenities="pool" data-guest-count="1">
+<div class="media-column" >
+<div class="bookmark" >
+<span class="badge"><span class="material-symbols-outlined">bookmark</span>Best choice</span>
+<img src="41.master-suite.jpeg" alt="master-suite" class="main-preview-img">
+</div>
+<div class="thumbnail-slider-container">
+<button type="button" class="slider-arrow prev-arrow">❬</button>
+<div class="thumbnail-track">
+<div class="thumb-box">
+<img src="bathroom.png" alt="Bathroom View">
+</div>
+<div class="thumb-box">
+<img src="26.city-view.png" alt="room-1">
+</div>
+<div class="thumb-box">
+<img src="26.city-view.png" alt="Alternative View">
+</div>
+<div class="thumb-box">
+<img src="28.executive-room.png" alt="Bed View">
+</div>
+<div class="thumb-box">
+<img src="24.bathroom.png" alt="Lobby View">
+</div>
+</div>
+<button type="button" class="slider-arrow next-arrow">❭</button>
+</div>
+</div>
+<div class="results-text">
+<p>
+<span>Master Suite</span>
+This 85-square-meter sanctuary balances architectural scale with intimate, "Modern Minimalist" warmth. At its heart lies a California King bed outfitted with 800-thread-count Egyptian cotton and a signature style setup.
+</p>
+<div class="icon-box">
+<i class="material-symbols-outlined">wifi</i>
+<span>Wi-Fi</span>
+<i class="material-symbols-outlined">bed</i>
+<span>King bed</span>
+<i class="material-symbols-outlined">wine_bar</i>
+<span>minibar</span>
+</div>
+<div class="price-card" data-price="95000" >
+¥95,000 / night
+</div>
+<div class="results-actions">
+<button type="button" class="details-button" onclick="window.location.href='03.Confirmation-page.html';">Book Now</button>
+<button class="details-button">Reserve Now</button>
+</div>
+</article>
+<article class="results-card" data-room-type="executive-suite" data-price="145000" data-amenities="wifi" data-guest-count="2">
+<div class="media-column">
+<div class="bookmark">
+<span class="badge"><span class="material-symbols-outlined">bookmark</span>Best choice</span>
+<img src="executive-room.png" alt="executive-suite" class="main-preview-img">
+</div>
+<div class="thumbnail-slider-container">
+<button type="button" class="slider-arrow prev-arrow">❬</button>
+<div class="thumbnail-track">
+<div class="thumb-box">
+<img src="24.bathroom.png" alt="Bathroom View">
+</div>
+<div class="thumb-box">
+<img src="26.city-view.png" alt="room-1">
+</div>
+<div class="thumb-box">
+<img src="26.city-view.png" alt="Alternative View">
+</div>
+<div class="thumb-box">
+<img src="28.executive-room.png" alt="Bed View">
+</div>
+<div class="thumb-box">
+<img src="24.bathroom.png" alt="Lobby View">
+</div>
+</div>
+<button type="button" class="slider-arrow next-arrow">❭</button>
+</div>
+</div>
+<div class="results-text">
+<p>
+<span>Executive Suite</span>
+This 85-square-meter sanctuary balances architectural scale with intimate, "Modern Minimalist" warmth. At its heart lies a California King bed outfitted with 800-thread-count Egyptian cotton and a signature style setup.
+</p>
+<div class="icon-box">
+<i class="material-symbols-outlined">wifi</i>
+<span>Wi-Fi</span>
+<i class="material-symbols-outlined">bed</i>
+<span>King bed</span>
+<i class="material-symbols-outlined">wine_bar</i>
+<span>minibar</span>
+</div>
+<div class="price-card" data-price="145000" >
+¥145,000 / night
+</div>
+<div class="results-actions">
+<button type="button" class="details-button" onclick="window.location.href='Confirmation-page';">Book Now</button>
+<button class="details-button">Reserve Now</button>
+</div>
+</article>
+
+<div class="room-suggestions">
+  <article class="suggestion-card" data-room-type="master-suite" data-price-value="¥95.88" data-amenities="pool" data-guest-count="1">
+<div class="media-column">
+<div class="bookmark">
+<span class="badge"><span class="material-symbols-outlined">bookmark</span>Rooms near</span>
+<img src="41.master-suite.jpeg" alt="master-suite" class="main-preview-img">
+</div>
+</div>
+<div class="results-text">
+<p>
+<span>Master Suite</span>
+This 85-square-meter sanctuary balances architectural scale with intimate, "Modern Minimalist" warmth. At its heart lies a California King bed outfitted with 800-thread-count Egyptian cotton and a signature style setup.
+</p>
+<div class="icon-box">
+<i class="material-symbols-outlined">wifi</i>
+<span>Wi-Fi</span>
+<i class="material-symbols-outlined">bed</i>
+<span>King bed</span>
+<i class="material-symbols-outlined">wine_bar</i>
+<span>minibar</span>
+</div>
+<div class="price-box">
+¥95,000 / night
+</div>
+<div class="results-actions">
+<button type="button" class="details-button" onclick="window.location.href='03.Confirmation-page.html';">Check room</button>
+<button type="button" class="details-button" onclick="window.location.href='03.Confirmation-page.html';">More details</button>
+</div>
+</article>
+<div class="suggestion-container">
+<div class="info-text-box">
+
+</div>
+<div class="img-group">
+<img src="47.newletter-1.jpeg" alt="suggest-room">
+</div>
+</div>
+</div>
+<div class="info-box">
+<div class="policy-column">
+<h3>Policies</h3>
+<p>
+Check-in<span>2:00pm</span>
+</p>
+<p>
+Check-out<span>12:00pm</span>
+</p>
+<p>
+Cancellation<span>Free cancellation up to 48 before check-in</span>
+</p>
+<p>
+Children & Bed<span>Children of all ages are welcome. Extra bed available upon request.</span>
+</p>
+<p>
+Pets<span>Pets are not allowed</span>
+</p>
+</div>
+<div class="in-room-amenities">
+<h3>In room amenities</h3>
+<div class="amenities-column">
+<div class="column">
+<div class="item">
+Smart TV
+</div>
+<div class="item">
+Telephone
+</div>
+<div class="item">
+Work Desk
+</div>
+<div class="item">
+Chair & Sofa
+</div>
+<div class="item">
+Wardrobe
+</div>
+<div class="item">
+Slippers
+</div>
+</div>
+<div class="column">
+<div class="item">
+Bathrobe
+</div>
+<div class="item">
+Hair Dryer
+</div>
+<div class="item">
+Bath Amenities
+</div>
+<div class="item">
+Minibar
+</div>
+<div class="item">
+Coffee & Tea Maker
+</div>
+<div class="item">
+Iron & Ironing Board
+</div>
+</div>
+<div class="column">
+<div class="item">
+Safe Box
+</div>
+<div class="item">
+Umbrella
+</div>
+<div class="item">
+Laundry Bag
+</div>
+<div class="item">
+Full-length Mirror
+</div>
+<div class="item">
+Sewing Kit
+</div>
+<div class="item">
+Charging Station
+</div>
+</div>
+</section>
+
+</main>
+<section class="main-footer-slider">
+<div class="section-slider">
+<h2>You may also like</h2>
+<a href="rooms.html" class="btn-link">VIEW ALL ROOMS →</a>
+</div>
+<div class="rooms-container">
+<div class="room-card">
+<img src="41.master-suite.jpeg" alt="Master Suite">
+<div class="room-info">
+<h4>Master Suite</h4>
+<p class="view-tag">
+City View
+</p>
+<p class="price">
+¥95,000 / night
+</p>
+<a href="rooms.html" class="btn-link">Check room →</a>
+</div>
+</div>
+<div class="room-card">
+<img src="49.the-loft.jpeg" alt="The Loft">
+<div class="room-info">
+<h4>The Loft</h4>
+<p class="view-tag">
+Sky View
+</p>
+<p class="price">
+¥115,000 / night
+</p>
+<a href="rooms.html" class="btn-link">Check room →</a>
+</div>
+</div>
+<div class="room-card">
+<img src="26.city-view.png" alt="executive-suite">
+<div class="room-info">
+<h4>Executive Room</h4>
+<p class="view-tag">
+City View
+</p>
+<p class="price">
+¥145,000 / night
+</p>
+<a href="rooms.html" class="btn-link">Check room →</a>
+</div>
+</div>
+<div class="room-card">
+<img src="22.ambassador-room.jpeg" alt="Ambassador Suite">
+<div class="room-info">
+<h4>Ambassador Suite</h4>
+<p class="view-tag">
+Tower View
+</p>
+<p class="price">
+¥180,000 / night
+</p>
+<a href="rooms.html" class="btn-link">Check room →</a>
+</div>
+</div>
+</div>
+</section>
+<div class="footer-bar">
+<div class="content-box">
+<div class="box-content">
+<i class="material-symbols-outlined">person</i>
+<p>
+<span>Need help booking?</span><br>
+Our reservation team is here to assist you with your stay
+</p>
+</div>
+</div>
+<div class="content-box">
+<div class="box-content">
+<i class="material-symbols-outlined">phone</i>
+<p>
+09514658897
+</p>
+</div>
+</div>
+<div class="content-box">
+<div class="box-content">
+<i class="material-symbols-outlined">mail</i>
+<p>
+maryshotel@gmail.com
+</p>
+</div>
+</div>
+</div>
+<footer>
+<section class="footer-col-container">
+<div class="footer-grid">
+<div class="footer-col-1">
+<div class="logo-1">
+<h1><span>M</span>ary's</h1>
+<h1><span>H</span>otel</h1>
+<p>
+<span>Located @ Justice R.st.,Sample design district myPortfolio City, Ph.</span>
+</p>
+<div class="social-icon">
+<a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="social-icon-link">
+<svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+<path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+</svg>
+</a>
+<a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-icon-link">
+<svg xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+</svg>
+</a>
+<a href="https://x.com" target="_blank" aria-label="X" class="social-icon-link">
+<svg xmlns="http://w3.org" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+</svg>
+</a>
+<a href="https://threads.net" target="_blank" aria-label="Threads" class="social-icon-link">
+<svg xmlns="http://w3.org" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+<path d="M12.872 13.91c-.482 0-.853-.122-1.111-.365-.258-.244-.388-.598-.388-1.063 0-.448.125-.795.375-1.04.25-.246.61-.369 1.077-.369.47 0 .835.122 1.096.365.26.244.39.596.39 1.056 0 .452-.127.802-.383 1.048-.256.246-.606.369-1.048.369zm6.65-2.02c.034.331.05.696.05 1.096 0 1.94-.593 3.493-1.777 4.657-1.185 1.165-2.784 1.748-4.797 1.748-1.572 0-2.922-.358-4.048-1.074-1.127-.716-1.954-1.724-2.483-3.023-.528-1.3-.793-2.822-.793-4.567 0-1.758.269-3.284.808-4.577.538-1.293 1.37-2.296 2.497-3.01C10.106 2.35 11.472 2 13.076 2c2.036 0 3.642.564 4.818 1.691 1.176 1.127 1.751 2.628 1.724 4.502h-2.148c.014-1.307-.358-2.318-1.117-3.033-.758-.715-1.854-1.072-3.288-1.072-1.157 0-2.112.274-2.863.824-.752.55-1.302 1.326-1.65 2.327-.348 1.002-.522 2.21-.522 3.626 0 1.41.17 2.61.51 3.598.34.987.886 1.75 1.637 2.288.75.539 1.688.808 2.813.808 1.434 0 2.545-.397 3.33-1.19.787-.794 1.182-1.91 1.187-3.35h-3.326c-.854 0-1.543-.223-2.067-.67-.524-.446-.786-1.05-.786-1.813 0-.785.258-1.402.776-1.852.518-.45 1.222-.675 2.112-.675.894 0 1.594.223 2.102.67.508.447.765 1.057.772 1.83h2.153c-.007-1.319-.444-2.357-1.31-3.112-.866-.755-2.03-1.133-3.493-1.133-1.442 0-2.614.398-3.514 1.196-.9 1.19-.344 2.55-.344 4.08 0 1.543.298 2.766.892 3.667.595.901 1.464 1.352 2.607 1.352 1.42 0 2.519-.485 3.298-1.455.452-.564.743-1.233.873-2.008h2.183z" />
+</svg>
+</a>
+<a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="social-icon-link">
+<svg xmlns="http://w3.org" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+<path d="M12.525.02c1.31.01 2.61.1 3.89.28.02.63.14 1.25.37 1.83.33.81.87 1.51 1.57 2.04.66.52 1.45.86 2.29.99.36.06.73.09 1.1.09V9.22c-.67 0-1.33-.1-1.97-.3-1.01-.31-1.92-.91-2.61-1.72-.11-.13-.22-.27-.32-.41v6.94c0 1.2-.28 2.38-.83 3.44-.54 1.06-1.34 1.94-2.33 2.56-1.02.63-2.21.97-3.42.97-1.15 0-2.28-.3-3.28-.88-.99-.58-1.81-1.42-2.37-2.43-.58-1.04-.88-2.22-.88-3.41 0-1.19.3-2.37.88-3.41.56-1.01 1.38-1.85 2.37-2.43 1-.58 2.13-.88 3.28-.88.35 0 .7.03 1.05.09V11.2c-.35-.06-.7-.09-1.05-.09-1.36 0-2.66.54-3.62 1.51-.97.96-1.51 2.27-1.51 3.63s.54 2.67 1.51 3.63c.96.97 2.26 1.51 3.62 1.51 1.35 0 2.66-.54 3.62-1.51.97-.96 1.51-2.27 1.51-3.63V0h2.24z" />
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-col-2">
+<h3>Quick links</h>
+<div class="item-1">
+<h6>offers</h6>
+<h6>about us</h6>
+<h6>contact us</h6>
+</div>
+</div>
+<div class="footer-col-3">
+<div class="newsletter-container">
+<h3 class="newsletter-title">Newsletter</h3>
+<p class="subtitle">
+Register now and get exclusive offers and updates
+</p>
+<div class="newsletter-form">
+<input type="email" placeholder="enter your email address" required>
+<button type="submit" class="newsletter-btn">Submit</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</footer>
+
+
+<script src="21.rooms.javascript"></script>
+<script src="15.data.value.javascript"></script>
+<script src="16.main-footer.slider.javascript"></script>
+<script src="20.Price-range.javascript"></script>
+<script src="13.amenity.javascript"></script>
+<script src="17.guest-count.javascript"></script>
+</body>
+
+</html>

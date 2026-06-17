@@ -1,0 +1,515 @@
+.main-layout{
+  background-color: rgba(0, 0, 0, 0.777); 
+}
+.booking-container{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    background:black;
+    border:2px solid #a68b5b;
+}
+
+.booking-form{
+    width:100%;
+    padding:20px;
+    
+}
+.info-container p{
+  color:#e0e0e0;
+}
+.booking-details,
+.booking-column{
+    flex:1 1 300px;
+}
+
+.booking-details{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    border-right:2px solid #a68b5b;
+}
+
+.booking-details h3,
+.booking-column h3{
+    color:#a68b5b;
+    padding:10px 0;
+    border-bottom:2px solid #a68b5b;
+    margin-bottom:10px;
+}
+
+.booking-container p{
+    padding:10px 20px;
+    color:#e0e0e0;
+    margin:0;
+}
+
+.room-details-container{
+    width:100%;
+    background-color:rgba(0,0,0,0.777);
+    display:flex;
+    border-top:2px solid #a68b5b;
+    padding:20px;
+    color:#e0e0e0;
+}
+
+.room-content h3{
+    color:#a68b5b;
+    padding-bottom:10px;
+    border-bottom:1px solid #a68b5b;
+    margin-bottom:15px;
+}
+
+.room-content p{
+    line-height:1.8;
+}
+}
+.booking-details h3{
+  display: flex;
+  color:#a68b5b;
+}
+.booking-details {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.booking-column h3 {
+  margin-bottom: 0.75rem;
+}
+.booking-column p {
+  margin: 0;
+}  
+}
+.booking-details h3{
+  color:#a68b5b;
+  padding-bottom:10px;
+  padding-top:10px;
+  border-bottom:1px solid #a68b5b;
+}
+.booking-container p{
+  padding: 20px;
+  color: #e0e0e0;
+  
+}
+.room-details-container{
+  background-color: rgba(0,0,0,0.777);
+  display: flex;
+  flex-direction: row;
+  border-bottom:2px solid #a68b5b;
+  padding: 10px;
+  color: #e0e0e0;
+  
+}
+.room-amenities h3{
+  color:#a68b5b
+  background-color: rgba(0,0,0,0.777);
+}
+.booking-card{
+  display:flex;
+  color:  #e0e0e0;
+  font-family: 'cinzel',serif;
+  flex-direction: row;
+}
+.room-details-container span{
+  color: goldenrod;
+}
+.booking-form{
+  width: 100%;
+  max-width: 450px;
+  background-color:rgba(255,255,255,.0555);
+  padding: 1rem;
+  border-radius:2px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.255);
+  display: flex;
+  flex-direction:column;
+  gap:1.25rem;
+  font-family:'cinzel',serif;
+  border:2px solid #a68b5b;
+}
+.booking-form input{
+  width:100%;
+  padding:0.75rem 1rem;
+  font-size:1rem;
+  border-radius:4px;
+  box-sizing:border-box;
+  transition:border-color 0.2s, box-shadow 02s;
+}
+.booking-form input:focus{
+  outline:none;
+  border-color:#a68b5b;
+  box-shadow:0 0 0 3px  rgba(166, 139, 91, 0.4);;
+}
+.booking-form-btn {
+  width: 100%;
+  background-color:#a68b5b;
+  color:black;
+  border: none;
+  padding:.85rem;
+  font-size: 0.8rem;
+  font-weight:400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.booking-form-btn:hover {
+  background-color:#e0e0e0;
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0; 
+}
+.payment-methods {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: 'Cinzel', serif;
+  margin-top: 15px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.85rem 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(166, 139, 91, 0.4);
+  border-radius: 4px;
+  color: #e0e0e0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.payment-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #a68b5b;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.payment-icon, 
+.card-group {
+  pointer-events: none; 
+}
+
+.payment-icon {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-gcash {
+  max-width: 70px;
+  filter: brightness(1.1) contrast(1.05);
+}
+.icon-group,.price-card{
+  color: goldenrod;
+}
+.card-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.payment-option:hover {
+  background-color: rgba(166, 139, 91, 0.08);
+  border-color: #a68b5b;
+}
+
+.payment-option:has(input[type="radio"]:checked) {
+  border-color: #a68b5b;
+  background-color: rgba(166, 139, 91, 0.15);
+  box-shadow: 0 0 10px rgba(166, 139, 91, 0.25);
+}
+
+.payment-option input[type="radio"]:checked + .custom-radio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #a68b5b;
+  border-radius: 50%;
+}
+.brand-maya{
+  max-width: 65px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.payment-option:has(input[value="maya"]:checked){
+  border-color:#00B14F;
+  background-color:rgba(0,177,79,0.12);
+  box-shadow:0 0 10px rgba(0,177,79,0.25);
+}
+
+.payment-option:has(input[value="maya"]:checked) .custom-radio{
+  border-color:#00B14F;
+}
+
+.payment-option:has(input[value="maya"]:checked) .custom-radio::after{
+  background-color:#00B14F;
+}
+.payment-option{
+  position:relative;
+  overflow:hidden;
+  transition:all .3s ease;
+}
+.payment-icon {
+  position:absolute;
+  right: 15px;
+  top: 50%;
+  transform:translateY(-50%) scale(0.9);
+  transition: all .3s ease;
+  opacity:0;
+  pointer-events:none;
+}
+.payment-option:has(input[value="gcash"]:checked){
+  border-color:#007DFF;
+  background: linear-gradient(90deg,rgba(0,125,255,0.15),
+  rgba(0,125,255,0.05)
+  );
+  box-shadow: 0 0 10px rgba(0,125,255,0.25), inset 0 0 10px rgba(0,125,255,0.08);
+}
+.payment-option:has(input[value="gcash"]:checked) .custom-radio {
+  border-color:#007DFF;
+}
+.payment-option:has(input[value="gcash"]:checked) .custom-radio::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background: #007;
+}
+.payment-option:has(input[value="gcash"]:checked) .payment-icon{
+  opacity:70%;
+  transform: translateY(-40%) scale(1.2);
+}
+
+.payment-option:has(input[value="maya"]:checked){
+  border-color:#00b14f;
+  background: linear-gradient(90deg,rgba(0,177,79,0.15),
+  rgba(0,177,79,0.05)
+  );
+  box-shadow: 0 0 10px rgba(0,177,79,0.25), inset 0 0 10px  rgba(0,177,79,0.08);
+}
+.payment-option:has(input[value="maya"]:checked) .custom-radio {
+  border-color:#00b14f;
+}
+.payment-option:has(input[value="maya"]:checked) .custom-radio::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background: #00b14f;
+}
+.payment-option:has(input[value="maya"]:checked) .payment-icon{
+  opacity:70%;
+    transform: translateY(-40%) scale(1.2);
+}
+
+.payment-option:has(input[value="mastercard"]:checked){
+  border-color:#f79e1b;
+  background: linear-gradient(90deg,rgba(247,158,27,0.15),
+  rgba(235,0,27,0.08)
+  );
+  box-shadow: 0 0 10px rgba(247,158,27,0.25), insett 0 0 10px rgba(235,0,27,0.08);
+}
+.payment-option:has(input[value="mastercard"]:checked) .custom-radio {
+  border-color:#f79e1b;
+}
+.payment-option:has(input[value="mastercard"]:checked) .custom-radio::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#901b;
+}
+.payment-option:has(input[value="mastercard"]:checked) .payment-icon{
+  opacity:70%;
+   transform: translateY(-40%) scale(1.2);
+}
+
+
+.payment-option:has(input[value="hotel"]:checked){
+  border-color:#f79e1b;
+  background: linear-gradient(90deg,rgba(247,158,27,0.15),
+  rgba(235,0,27,0.08)
+  );
+  box-shadow: 0 0 10px rgba(247,158,27,0.25), inset 0 0 10px rgba(235,0,27,0.08);
+}
+.payment-option:has(input[value="hotel"]:checked) .custom-radio {
+  border-color:#f79e1b;
+}
+.payment-option:has(input[value="hotel"]:checked) .custom-radio::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background: goldenrod;
+}
+.payment-option:has(input[value="hotel"]:checked) .payment-icon{
+  opacity:70%;
+   transform: translateY(-40%) scale(1.2);
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index:1000;
+}
+.payment-box{
+  width:320px;
+  background:#ffffff;
+  padding:25px;
+  border-radius:12px;
+  text-align: center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.2s ease-in-out;
+}
+.payment-box h2{
+  margin-bottom: 15px;
+  font-size: 20px;
+  color:#5555;
+}
+.payment-box p{
+  margin-bottom: 10px;
+  font-size:14px;
+  color: #555;
+}
+.payment-box input!importan[type"password"]{
+  width:100%;
+  padding: 10px;
+  font-size:18px;
+  text-align: center;
+  letter-spacing: 8px;
+  border-radius: 8px;
+  border:1px solid #ccc;
+  outline:none;
+  margin-bottom: 15px;
+}
+.payment-box button {
+  border-color: #00a86b;
+  box-shadow: 0 0 5px rgba(0,168,107,0.4);
+}
+.payment-box button{
+  width:100%;
+  padding: 12px;
+  background: #00986b;
+  font-size:16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+@keyframe fadeIn{
+  from {
+    transform:scale(0.9);
+    opacity: o;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#confimationModal{
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+.confirmation-box{
+  width: 100%;
+  background: #0f0f0f0;
+  border: 1px solid #a68b5b;
+  padding: 25px;
+  border-radius:12px;
+  text-align: center;
+  color:#fff;
+  animation: pop 0.3s ease;
+}
+.confirmation-box h2{
+  color:#a68b5b;
+  margin-bottom: 10px;
+}
+.confirmation-box button{
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #a68b5b;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.confirmation-box button:hover{
+  background: #c9a96a;
+}
+.confirmation-box h3{
+  margin:10px 0;
+  letter-spacing: 2px;
+  color: #fff;
+}
+@keyframes pop{
+  from{ transform: scale(0.8);
+    opacity: 0;
+  } to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

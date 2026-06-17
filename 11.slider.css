@@ -1,0 +1,38 @@
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    max-width: 155px; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch; 
+    justify-items: bottom;
+}
+
+.slider-container .img-box {
+    flex: 0 0 100%; 
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 155px; 
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.slider-container .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-container {
+    scrollbar-width: none;
+}
