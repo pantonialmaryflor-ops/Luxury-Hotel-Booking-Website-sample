@@ -63,5 +63,20 @@ Author
 Maryflor Pantonial
 
 Self-Taught Front-End Developer
+## 🎨 UI/UX Design & Blueprints
 
-Started Learning Web Development: April 2026# Luxury-Hotel-Booking-Website-sample-
+<p align="center">
+  <img src="homepage.png" alt="Figma Project Mockup" width="100%">
+    <img src="resevation.png" alt="Figma Project Mockup" width="100%">
+        <img src="room_availability.png" alt="Figma Project Mockup" width="100%">
+        
+  
+</p>
+
+> 🚀 **Design Prototype:** You can inspect my original layout grids, vector components, and responsive canvas architecture directly inside the public [Figma Workspace](https://www.figma.com/files/team/1619413577993433281/all-projects).
+
+### 🛠️ Design to Code Highlights
+* **Component Mastery:** Designed custom interface modules from scratch in Figma and translated them into semantic HTML structures.
+* **Layout Precision:** Implemented a mobile-responsive grid layout using CSS Flexbox and Grid to mirror the pixel-perfect Figma design specifications.
+* **Interactive Design:** Mapped out clean hover and focus states for buttons and interactive cards to elevate user engagement.
+* 
