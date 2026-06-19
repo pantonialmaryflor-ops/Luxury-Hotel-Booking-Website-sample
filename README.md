@@ -68,7 +68,7 @@ Self-Taught Front-End Developer
 <p align="center">
   <img src="homepage.png" alt="Figma Project Mockup" width="100%">
     <img src="resevation.png" alt="Figma Project Mockup" width="100%">
-        <img src="room_availability.png" alt="Figma Project Mockup" width="100%">
+        <img src="Suite-availability Menu.png" alt="Figma Project Mockup" width="100%">
         
   
 </p>
