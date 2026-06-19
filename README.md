@@ -58,11 +58,7 @@ Future Improvements
 - Online payment gateway integration
 - Reservation management dashboard
 
-Author
 
-Maryflor Pantonial
-
-Self-Taught Front-End Developer
 ## 🎨 UI/UX Design & Blueprints
 
 <p align="center">
@@ -79,4 +75,10 @@ Self-Taught Front-End Developer
 * **Component Mastery:** Designed custom interface modules from scratch in Figma and translated them into semantic HTML structures.
 * **Layout Precision:** Implemented a mobile-responsive grid layout using CSS Flexbox and Grid to mirror the pixel-perfect Figma design specifications.
 * **Interactive Design:** Mapped out clean hover and focus states for buttons and interactive cards to elevate user engagement.
+
 * 
+Author
+
+Maryflor Pantonial
+
+Self-Taught Front-End Developer
