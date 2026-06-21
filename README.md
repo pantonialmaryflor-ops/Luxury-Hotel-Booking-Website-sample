@@ -76,7 +76,8 @@ Future Improvements
 * **Layout Precision:** Implemented a mobile-responsive grid layout using CSS Flexbox and Grid to mirror the pixel-perfect Figma design specifications.
 * **Interactive Design:** Mapped out clean hover and focus states for buttons and interactive cards to elevate user engagement.
 
-* 
+## Demo
+![Website Demo](sample.gif)
 Author
 
 Maryflor Pantonial
